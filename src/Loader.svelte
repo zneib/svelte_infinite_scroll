@@ -1,0 +1,49 @@
+<script>
+  export let loading
+</script>
+
+<style>
+  .loader {
+    opacity: 0;
+    display: flex;
+    position: fixed;
+    bottom: 50px;
+    transition: opacity 0.3s ease-in;
+  }
+
+  .show {
+    opacity: 1;
+  }
+
+  .circle {
+    background-color: #ff3e00;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 5px;
+    animation: bounce 0.5s ease-in infinite;
+  }
+
+  .circle:nth-of-type(2) {
+    animation-delay: 0.1s;
+  }
+  .circle:nth-of-type(3) {
+    animation-delay: 0.2s;
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+</style>
+
+<div class="loader" class:show={loading}>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</div>
